@@ -4,265 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LuthanStore - Layanan Joki Game Terpercaya</title>
-    <style>
-        /* ==========================================
-           1. RESET & CSS VARIABLES (DARK CYAN THEME)
-           ========================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --bg-color: #0b1319;
-            --card-bg: #14222d;
-            --accent-cyan: #00e5ff;
-            --accent-hover: #00b8cc;
-            --text-color: #e0f7fa;
-            --text-muted: #8ab4f8;
-            --border-color: #1e3a4b;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* ==========================================
-           2. HEADER & NAVIGATION BAR
-           ========================================== */
-        header {
-            background-color: var(--card-bg);
-            border-bottom: 2px solid var(--border-color);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.1);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--accent-cyan);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        nav {
-            display: flex;
-            gap: 10px;
-        }
-
-        /* Tombol Navigasi pengganti Anchor */
-        .nav-btn {
-            background: transparent;
-            border: 1px solid transparent;
-            color: var(--text-color);
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .nav-btn:hover {
-            color: var(--accent-cyan);
-            background-color: rgba(0, 229, 255, 0.05);
-        }
-
-        .nav-btn.active {
-            background-color: var(--accent-cyan);
-            color: #000;
-            box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
-        }
-
-        /* ==========================================
-           3. MAIN CONTENT CONTAINER & PAGES
-           ========================================== */
-        main {
-            flex: 1;
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .page {
-            display: none; /* Sembunyikan semua halaman secara default */
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        .page.active {
-            display: block; /* Tampilkan hanya halaman yang aktif */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ==========================================
-           4. HALAMAN HOME & HERO SECTION
-           ========================================== */
-        .hero {
-            text-align: center;
-            padding: 3rem 1rem;
-            background: linear-gradient(180deg, var(--card-bg) 0%, var(--bg-color) 100%);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            color: var(--accent-cyan);
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #b0bec5;
-            max-width: 600px;
-            margin: 0 auto 1.5rem;
-        }
-
-        .cta-btn {
-            background-color: var(--accent-cyan);
-            color: #000;
-            border: none;
-            padding: 0.8rem 1.8rem;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .cta-btn:hover {
-            background-color: var(--accent-hover);
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
-        }
-
-        /* ==========================================
-           5. HALAMAN JOKI (CARDS GRID)
-           ========================================== */
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--accent-cyan);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-cyan);
-        }
-
-        .card h3 {
-            color: var(--accent-cyan);
-            margin-bottom: 0.5rem;
-        }
-
-        .card .price {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin: 1rem 0;
-            color: #fff;
-        }
-
-        .card-btn {
-            background: transparent;
-            border: 1px solid var(--accent-cyan);
-            color: var(--accent-cyan);
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .card-btn:hover {
-            background-color: var(--accent-cyan);
-            color: #000;
-        }
-
-        /* ==========================================
-           6. HALAMAN KONTAK & FORM
-           ========================================== */
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--accent-cyan);
-        }
-
-        .form-group input, 
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            background-color: var(--card-bg);
-            color: #fff;
-            outline: none;
-        }
-
-        .form-group input:focus, 
-        .form-group textarea:focus {
-            border-color: var(--accent-cyan);
-        }
-
-        /* ==========================================
-           7. FOOTER
-           ========================================== */
-        footer {
-            background-color: var(--card-bg);
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 0.9rem;
-            color: #78909c;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
+    <!-- Menghubungkan File CSS Terpisah -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -270,7 +13,7 @@
     <header>
         <div class="logo">LuthanStore</div>
         <nav>
-            <!-- Menggunakan atribut onclick untuk memanggil fungsi JavaScript -->
+            <!-- Menggunakan event onclick JavaScript untuk mengganti halaman -->
             <button class="nav-btn active" onclick="switchPage('home', this)">Beranda</button>
             <button class="nav-btn" onclick="switchPage('joki', this)">Layanan Joki</button>
             <button class="nav-btn" onclick="switchPage('testi', this)">Testimoni</button>
@@ -353,7 +96,7 @@
         <!-- HALAMAN 4: KONTAK -->
         <section id="kontak" class="page">
             <h2 class="section-title">Hubungi Kami</h2>
-            <div style="max-width: 600px; margin: 0 auto; background-color: var(--card-bg); padding: 2rem; border-radius: 10px; border: 1px solid var(--border-color);">
+            <div class="form-container">
                 <form onsubmit="alert('Pesan berhasil terkirim! Admin LuthanStore akan segera menghubungi Anda.'); return false;">
                     <div class="form-group">
                         <label for="nama">Nama / Nickname Game</label>
@@ -371,7 +114,7 @@
                         <label for="catatan">Catatan Tambahan</label>
                         <textarea id="catatan" rows="4" placeholder="Tuliskan hero favorit / instruksi khusus"></textarea>
                     </div>
-                    <button type="submit" class="cta-btn" style="width: 100%;">Kirim Pesan Order</button>
+                    <button type="submit" class="cta-btn full-width">Kirim Pesan Order</button>
                 </form>
             </div>
         </section>
@@ -383,33 +126,33 @@
         <p>&copy; 2026 LuthanStore. All Rights Reserved. Designed for Mobile & PC Gamers.</p>
     </footer>
 
-    <!-- JAVASCRIPT UNTUK NAVIGASI (SPIN / SPA) -->
+    <!-- JAVASCRIPT UNTUK NAVIGASI HALAMAN -->
     <script>
         function switchPage(pageId, element) {
-            // 1. Sembunyikan semua elemen elemen halaman (.page)
+            // Sembunyikan semua section .page
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => {
                 page.classList.remove('active');
             });
 
-            // 2. Hilangkan status 'active' dari semua tombol navigasi
+            // Reset status active semua tombol navigasi
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(button => {
                 button.classList.remove('active');
             });
 
-            // 3. Tampilkan halaman yang dipilih
+            // Tampilkan halaman target
             const selectedPage = document.getElementById(pageId);
             if (selectedPage) {
                 selectedPage.classList.add('active');
             }
 
-            // 4. Tambahkan kelas 'active' pada tombol yang diklik
+            // Aktifkan style tombol yang diklik
             if (element) {
                 element.classList.add('active');
             }
 
-            // 5. Scroll ke paling atas saat berganti halaman
+            // Scroll ke posisi paling atas
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
