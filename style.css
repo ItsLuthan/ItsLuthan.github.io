@@ -110,3 +110,17 @@ footer{border-top:1px solid #2a1a5a;background:#05031299;padding:34px 0 18px;mar
 .steps{list-style:none;display:grid;gap:12px;counter-reset:s}
 .steps li{counter-increment:s;display:flex;gap:14px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
 .steps li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--ok);display:grid;place-items:center;font:700 15px Rajdhani}
+/* karakter hero */
+.hero{background:radial-gradient(ellipse at 30% 40%,#5a14c9aa,transparent 60%),radial-gradient(ellipse at 85% 60%,#7a1fff55,transparent 55%),linear-gradient(180deg,#0e0630,var(--bg))}
+.hero::before{display:none}
+.char{position:absolute;left:0;bottom:0;height:100%;width:auto;z-index:1;pointer-events:none;
+ -webkit-mask-image:linear-gradient(90deg,#000 62%,transparent),linear-gradient(0deg,transparent,#000 14%);
+ -webkit-mask-composite:source-in;
+ mask-image:linear-gradient(90deg,#000 62%,transparent),linear-gradient(0deg,transparent,#000 14%);
+ mask-composite:intersect}
+.tag{display:none}
+@media(max-width:980px){
+ .hero{padding-top:240px}
+ .char{left:0;top:0;bottom:auto;width:100%;height:240px;object-fit:cover;object-position:35% 25%;
+  -webkit-mask-image:linear-gradient(0deg,transparent,#000 35%);mask-image:linear-gradient(0deg,transparent,#000 35%)}
+}
