@@ -1,5 +1,5 @@
 // ====== EDIT DI SINI ======
-const WA_NUMBER = "6281234567890"; // nomor WhatsApp tanpa + atau spasi
+const WA_NUMBER = "6285645094825"; // nomor WhatsApp tanpa + atau spasi
 const PAKET = [
  {from:"Bronze",to:"Platinum",price:"Rp 35.000",time:"1 - 2 Hari",c:["#e08a2e","#6c8cff"]},
  {from:"Platinum",to:"Heroic",price:"Rp 80.000",time:"1 - 2 Hari",c:["#6c8cff","#ff3b4f"]},
