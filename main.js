@@ -1,11 +1,11 @@
 const wa = (m)=>`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(m)}`;
-document.querySelectorAll("a.wa").forEach(a=>{a.href=wa("Halo admin Luthan Joki FF, saya mau order joki.");a.target="_blank";a.rel="noopener"});
+document.querySelectorAll("a.wa").forEach(a=>{a.href=wa("Halo Mimin LuthanStore, saya mau order joki.");a.target="_blank";a.rel="noopener"});
 
 document.getElementById("priceGrid").innerHTML = PAKET.map(p=>`
  <div class="pc"><h3>${p.from} → ${p.to}</h3>
   <div class="rk"><b style="background:${p.c[0]}33;color:${p.c[0]};box-shadow:inset 0 0 0 2px ${p.c[0]}">${p.from[0]}</b><em>›</em><b style="background:${p.c[1]}33;color:${p.c[1]};box-shadow:inset 0 0 0 2px ${p.c[1]}">${p.to[0]}</b></div>
   <div class="amt">${p.price}</div><small>Proses ${p.time}</small>
-  <a class="btn o" target="_blank" rel="noopener" href="${wa(`Halo admin, saya mau order joki ${p.from} → ${p.to} (${p.price})`)}">💬 Order via WhatsApp</a></div>`).join("")+
+  <a class="btn o" target="_blank" rel="noopener" href="${wa(`Halo Mimin, saya mau order joki ${p.from} → ${p.to} (${p.price})`)}">💬 Order via WhatsApp</a></div>`).join("")+
  `<div class="pick"><h3>Pilih Paket Sesuai Kebutuhanmu</h3><ul class="ck"><li>Proses cepat &amp; aman</li><li>Harga bersaing</li><li>Bisa request jadwal</li><li>Garansi jika terjadi masalah</li></ul></div>`;
 
 // testimoni slider
