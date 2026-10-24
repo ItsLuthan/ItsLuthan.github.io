@@ -1,4 +1,4 @@
-# Luthan Joki FF
+# Luthan Store
 
 Landing page statis, siap GitHub Pages.
 
