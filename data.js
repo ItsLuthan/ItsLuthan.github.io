@@ -8,7 +8,7 @@ const PAKET = [
 ];
 const TESTI = [
  {n:"Rizky Kurniawan",t:"Joki nya cepat banget, cuma 3 hari udah sampai heroic. Aman juga akunnya. Recommended!",r:"Heroic"},
- {n:"Dika Saputra",t:"Pelayanan ramah, proses jelas, harga juga murah. Gak nyesel pokoknya!",r:"Master"},
+ {n:"Dika Saputra",t:"Pelayanan ramah, proses jelas, harga juga murah, ga nyesel dah pokoknya",r:"Master"},
  {n:"Fajar Nugroho",t:"Admin fast respon. Rank naik sesuai target,kadang malah melebihi target",r:"Grandmaster"},
  {n:"Andi Pratama",t:"Sudah 5x order di sini dan selalu puas. Akun aman, hasil sesuai janji.",r:"Heroic"}
 ];
